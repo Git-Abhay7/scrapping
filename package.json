@@ -13,6 +13,7 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "file-system": "^2.2.2",
+    "geopoint": "^1.0.1",
     "http-errors": "^1.6.3",
     "json2csv": "^5.0.1",
     "morgan": "~1.9.1",
