@@ -3,42 +3,4 @@ public
 
 
 
-  // $('div[class="_3BTv9X"] > [class="_1Nyybr  _30XEf0"]').attr(
-        //   "href"
-        // );
-
-
-
-
-
-rating => $('div[class="hGSR34"]').textContent
-img => $('div[class="_3BTv9X"]> [class="_1Nyybr  _30XEf0"]').getAttribute('src')
-price => $('div[class="_1uv9Cb"]>[class="_1vC4OE _2rQ-NK"] ').textContent
-off => $('div[class="VGWI6T"]> span').textContent
-
-//snapdeal
-
-// name => $('[class="product-title"]').text()
-// price => $('#display-price-623844940769').text()
-// image => $('[class="picture-elem"]>img ').attr('src')
-//ratings =>  $("#\\36 23844940769 > div.product-tuple-description > div.product-desc-rating > a > div.clearfix.rating.av-rating > p").text()
-
-
-
-  snapdealFetch: () => {
-    const body = {
-      a: 1,
-    };
-    fetch(
-      "https://www.snapdeal.com/search?keyword=tshirts&santizedKeyword=&catId=&categoryId=0&suggested=false&vertical=&noOfResults=20&searchState=&clickSrc=go_header&lastKeyword=&prodCatId=&changeBackToAll=false&foundInAll=false&categoryIdSearched=&cityPageUrl=&categoryUrl=&url=&utmContent=&dealDetail=&sort=rlvncy/post",
-      {
-        method: "post",
-        body: JSON.stringify(body),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((res) => res.text())
-      .then((json) => console.log(json));
-  },
+  
