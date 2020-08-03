@@ -76,9 +76,9 @@ module.exports = {
       function toRadians(sec) {
         return ((sec * Math.PI) / 180 * 60 * 60)
       }
-
       var R = 6371e3;
       var lat1 = req.body.lat1;
+      console.log(lat1)
       var lat2 = req.body.lat2;
       var lon1 = req.body.lon1;
       var lon2 = req.body.lon2;
@@ -112,12 +112,10 @@ module.exports = {
       var lat2 = LAT2;
       var lon1 = LON1;
       var lon2 = LON2;
-
       var φ1 = toRadians(lat1);
       var φ2 = toRadians(lat2);
       var Δφ = toRadians(Math.abs(lat2 - lat1));
       var Δλ = toRadians(Math.abs(lon2 - lon1));
-
       var a =
         Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
         Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
@@ -131,7 +129,7 @@ module.exports = {
     for (i = 0; i < airport.length; i++) {
       for (j = 0; j < airport.length; j++) {
         const dis = findDistance(airport[i].Lat, airport[j].Lat, airport[i].Lon, airport[j].Lon)
-        if (dis <= 1000 && dis != 0) {
+        if (dis <= 100000 && dis != 0) {
           arr.push(airport[j])
         } else {
           j++;
@@ -139,9 +137,11 @@ module.exports = {
       }
       i++;
     }
-    const  sorted = arr.sort(function(a, b){return a-b})
+    const sorted = arr.sort(function (a, b) {
+      return a - b
+    })
     if (arr != null) {
-      res.status(utils.Success_Code.Success).send([sorted[0],sorted[1],sorted[2]])
+      res.status(utils.Success_Code.Success).send([sorted[0], sorted[1], sorted[2]])
     } else {
       res.status(utils.Error_Code.NotFound).send(utils.Error_Message.NoData)
     }

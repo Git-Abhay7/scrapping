@@ -18,6 +18,8 @@
     "json2csv": "^5.0.1",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4"
   }
 }
