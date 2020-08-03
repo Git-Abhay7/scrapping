@@ -127,12 +127,11 @@ module.exports = {
       return D;
     }
     ///////////////////////////////////////////function to find Distance between Lat and Lon///////////////////////////////
-    console.log(airport.length)
     var arr = []
     for (i = 0; i < airport.length; i++) {
       for (j = 0; j < airport.length; j++) {
         const dis = findDistance(airport[i].Lat, airport[j].Lat, airport[i].Lon, airport[j].Lon)
-        if (dis <= 100000 && dis != 0) {
+        if (dis <= 1000 && dis != 0) {
           arr.push(airport[j])
         } else {
           j++;
@@ -140,8 +139,9 @@ module.exports = {
       }
       i++;
     }
+    const  sorted = arr.sort(function(a, b){return a-b})
     if (arr != null) {
-      res.status(utils.Success_Code.Success).send(arr)
+      res.status(utils.Success_Code.Success).send([sorted[0],sorted[1],sorted[2]])
     } else {
       res.status(utils.Error_Code.NotFound).send(utils.Error_Message.NoData)
     }
