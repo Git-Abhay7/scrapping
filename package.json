@@ -1,0 +1,25 @@
+{
+  "name": "scrap",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "colors": "^1.4.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "file-system": "^2.2.2",
+    "geopoint": "^1.0.1",
+    "http-errors": "^1.6.3",
+    "json2csv": "^5.0.1",
+    "morgan": "~1.9.1",
+    "node-fetch": "^2.6.0",
+    "pug": "2.0.0-beta11",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4"
+  }
+}
